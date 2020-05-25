@@ -1,28 +1,20 @@
 /* 선택자 변수 지정 */
 const sliderContainer = document.querySelector(".js-sliderContainer");
-// const sliderList = document.querySelector(".js-sliderList");
 const prevButton = document.querySelector(".js-prevSlider");
 const nextButton = document.querySelector(".js-nextSlider");
-const sliderArray = Array.from(document.querySelectorAll(".js-sliderList li"));
+const sliderArray = Array.from(document.querySelectorAll(".js-sliderImg img"));
 console.log('sliderArray', sliderArray);
 
-// const SLIDER_CLASS = ".bgImg";
+// const SLIDER_CLASS = "bgImg";
 const SLIDER_CLASS = "active";
 let currentSlideNumber = 1;
 const totalSliderNumber = sliderArray.length;
-let currentSlide = document.querySelector(".js-sliderList li:nth-child(1)");
+let currentSlide = document.querySelector(".js-sliderImg img:nth-child(1)")
+console.log('currentSlide', currentSlide);
 
 let slideShowInterval = null;  // 슬라이더에 마우스 올리면 null, 아니면 setInterval
 
 currentSlide.classList.add(SLIDER_CLASS);
-
-/* 배경 이미지 띄우기 */
-const paintImg = (imgNumber) => {
-  const img = new Image();
-  img.src = `images/${imgNumber}.jpg`;
-  img.classList.add("bgImg");
-  sliderContainer.prepend(img);
-}
 
 /* 버튼 클릭 핸들러 */
 const handlePrevClick = () => {
@@ -46,8 +38,7 @@ const handleNextClick = () => {
 /* 슬라이드 전환 */
 const transitionTo = slideNumber => {
   currentSlide.classList.remove(SLIDER_CLASS);
-  currentSlide = document.querySelector(`.js-sliderList li:nth-child(${slideNumber})`);
-  // paintImg(slideNumber);
+  currentSlide = document.querySelector(`.js-sliderImg img:nth-child(${slideNumber})`);
   currentSlide.classList.add(SLIDER_CLASS);
 }
 

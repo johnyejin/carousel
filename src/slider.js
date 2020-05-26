@@ -5,7 +5,7 @@ const nextButton = document.querySelector(".fa-arrow-alt-circle-right");
 const sliderArray = Array.from(document.querySelectorAll(".js-sliderImg img"));
 console.log('sliderArray', sliderArray);
 
-const SLIDER_CLASS = "active";
+const SLIDER_CLASS = "active"; 
 let currentSlideNumber = 1;
 const totalSliderNumber = sliderArray.length;
 let currentSlide = document.querySelector(".js-sliderImg img:nth-child(1)")

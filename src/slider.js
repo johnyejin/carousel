@@ -1,11 +1,10 @@
 /* 선택자 변수 지정 */
 const sliderContainer = document.querySelector(".js-sliderContainer");
-const prevButton = document.querySelector(".js-prevSlider");
-const nextButton = document.querySelector(".js-nextSlider");
+const prevButton = document.querySelector(".fa-arrow-alt-circle-left");
+const nextButton = document.querySelector(".fa-arrow-alt-circle-right");
 const sliderArray = Array.from(document.querySelectorAll(".js-sliderImg img"));
 console.log('sliderArray', sliderArray);
 
-// const SLIDER_CLASS = "bgImg";
 const SLIDER_CLASS = "active";
 let currentSlideNumber = 1;
 const totalSliderNumber = sliderArray.length;
@@ -51,7 +50,7 @@ const handleMouseOver = () => {
 
 /* 간격 생성 */
 const createInterval = () => {
-  slideShowInterval = setInterval(handleMouseOver, 2000);  // default는 2초마다 슬라이드 넘기기
+  slideShowInterval = setInterval(handleNextClick, 2000);  // default는 2초마다 슬라이드 넘기기
 }
 
 createInterval();

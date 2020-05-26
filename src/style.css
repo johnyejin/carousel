@@ -1,11 +1,19 @@
-body,
-html {
+* {
   padding: 0;
   margin: 0;
 }
-.slider {
+html, body {
   width: 100%;
-  height: 50vh;
+  height: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider {
+  width: 600px;
+  height: 400px;
 }
 .slider__container {
   height: 100%;
@@ -14,33 +22,26 @@ html {
   padding: 0;
   margin: 0;
 }
-.slider__list {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
+
 .slider__buttons > * {
-  top: 48%;
+  top: 50%;
   cursor: pointer;
+  position: absolute;
+  font-size: 1.5rem;
+  z-index: 9;
 }
 .slider__button:first-child {
-  position: absolute;
   left: 0;
-  z-index: 9;
+  margin-left: 10px;
 }
 .slider__button:last-child {
-  position: absolute;
   right: 0;
-  z-index: 9;
+  margin-right: 10px;
 }
 
 .slider__img img {
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: 0;
   opacity: 0;

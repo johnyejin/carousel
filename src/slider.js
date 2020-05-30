@@ -2,18 +2,20 @@
 const sliderContainer = document.querySelector(".js-sliderContainer");
 const prevButton = document.querySelector(".fa-arrow-alt-circle-left");
 const nextButton = document.querySelector(".fa-arrow-alt-circle-right");
-const sliderArray = Array.from(document.querySelectorAll(".js-sliderImg img"));
-console.log('sliderArray', sliderArray);
+const sliderImgArray = Array.from(document.querySelectorAll(".js-sliderImg img"));
+const sliderNowArray = Array.from(document.querySelectorAll(".js-sliderNow div"));
 
 const SLIDER_CLASS = "active";
+const SLIDER_NOW = "now";
 let currentSlideNumber = 1;
-const totalSliderNumber = sliderArray.length;
-let currentSlide = document.querySelector(".js-sliderImg img:nth-child(1)")
-console.log('currentSlide', currentSlide);
+const totalSliderNumber = sliderImgArray.length;
+let currentSlide = document.querySelector(".js-sliderImg img:nth-child(1)");
+let currentSlideNow = document.querySelector(".js-sliderNow div:nth-child(1)");
 
 let slideShowInterval = null;  // 슬라이더에 마우스 올리면 null, 아니면 setInterval
 
 currentSlide.classList.add(SLIDER_CLASS);
+currentSlideNow.classList.add(SLIDER_NOW);
 
 /* 버튼 클릭 핸들러 */
 const handlePrevClick = () => {
@@ -37,8 +39,11 @@ const handleNextClick = () => {
 /* 슬라이드 전환 */
 const transitionTo = slideNumber => {
   currentSlide.classList.remove(SLIDER_CLASS);
+  currentSlideNow.classList.remove(SLIDER_NOW);
   currentSlide = document.querySelector(`.js-sliderImg img:nth-child(${slideNumber})`);
+  currentSlideNow = document.querySelector(`.js-sliderNow div:nth-child(${slideNumber})`);
   currentSlide.classList.add(SLIDER_CLASS);
+  currentSlideNow.classList.add(SLIDER_NOW);
 }
 
 /* 마우스 over 핸들러 */

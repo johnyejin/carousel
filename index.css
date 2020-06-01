@@ -22,12 +22,14 @@ body {
   padding: 0;
   margin: 0;
 }
+
 /* 버튼 */
 .slider__buttons > * {
   top: 50%;
+  color: #C32a92;
   cursor: pointer;
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 30px;
   z-index: 9;
 }
 .slider__button:first-child {
@@ -38,6 +40,7 @@ body {
   right: 0;
   margin-right: 10px;
 }
+
 /* 이미지 */
 .slider__img img {
   height: 100%;
@@ -52,9 +55,11 @@ body {
   z-index: 1;
   opacity: 1;
 }
+
 /* 슬라이더 순서를 나타내는 버튼 */
 .slider__now {
   position: absolute;
+  cursor: pointer;
   width: 100%;
   text-align: center;
   bottom: 0;
@@ -62,6 +67,7 @@ body {
 }
 .box {
   display: inline-block;
+  cursor: pointer;
   margin: 0 1px;
   width: 5px;
   height: 5px;

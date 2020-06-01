@@ -36,6 +36,10 @@ const handleNextClick = () => {
   transitionTo(currentSlideNumber);
 }
 
+const handleBoxClick = (idx) => {
+  transitionTo(idx);
+}
+
 /* 슬라이드 전환 */
 const transitionTo = slideNumber => {
   currentSlide.classList.remove(SLIDER_CLASS);
@@ -65,3 +69,6 @@ prevButton.addEventListener("click", handlePrevClick);
 nextButton.addEventListener("click", handleNextClick);
 sliderContainer.addEventListener("mouseover", handleMouseOver);
 sliderContainer.addEventListener("mouseout", createInterval);
+sliderNowArray.forEach((boxButton, idx) => {
+  boxButton.addEventListener("click", () => handleBoxClick(idx + 1));
+})

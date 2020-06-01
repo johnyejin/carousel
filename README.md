@@ -7,3 +7,4 @@ VanillaJS Slider
 ### Implemented Function
 - Automatical circulation
 - Button to move left and right of slide
+- Box button to change slide
